@@ -5,7 +5,10 @@ const refs = {
   secs: document.querySelector("span[data-value-secs]"),
 };
 
-const countdownTimer = {
+class CountdownTimer {
+  constructor({ onTick }) {
+    this.onTick = onTick;
+  }
   start() {
     const targetDate = new Date("2021-08-20");
 
@@ -13,12 +16,15 @@ const countdownTimer = {
       const currentTime = Date.now();
       const deltaTime = targetDate - currentTime;
       const time = getTimeComponents(deltaTime);
-
-      updateTimerface(time);
+      this.onTick(time);
     }, 1000);
-  },
-};
+  }
+}
 
+const countdownTimer = new CountdownTimer({
+  selector: "#timer-1",
+  onTick: updateTimerface,
+});
 countdownTimer.start();
 
 // document.addEventListener("DOMContentLoaded", countdownTimer.start());
