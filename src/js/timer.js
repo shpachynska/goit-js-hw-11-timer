@@ -6,11 +6,10 @@ const refs = {
 };
 
 const countdownTimer = {
-  intervalId: null,
   start() {
     const targetDate = new Date("2021-08-20");
 
-    this.intervalId = setInterval(() => {
+    setInterval(() => {
       const currentTime = Date.now();
       const deltaTime = targetDate - currentTime;
       const time = getTimeComponents(deltaTime);
