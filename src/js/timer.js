@@ -1,8 +1,8 @@
 const refs = {
-  days: document.querySelector("span[data-value-days]"),
-  hours: document.querySelector("span[data-value-hours]"),
-  mins: document.querySelector("span[data-value-mins]"),
-  secs: document.querySelector("span[data-value-secs]"),
+  days: document.querySelector('[data-value="days"]'),
+  hours: document.querySelector('[data-value="hours"]'),
+  mins: document.querySelector('[data-value="mins"]'),
+  secs: document.querySelector('[data-value="secs"]'),
 };
 
 class CountdownTimer {
