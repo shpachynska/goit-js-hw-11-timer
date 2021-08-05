@@ -10,7 +10,7 @@ class CountdownTimer {
     this.onTick = onTick;
   }
   start() {
-    const targetDate = new Date("2021-08-20");
+    const targetDate = new Date('2021-08-20');
 
     setInterval(() => {
       const currentTime = Date.now();
@@ -22,7 +22,7 @@ class CountdownTimer {
 }
 
 const countdownTimer = new CountdownTimer({
-  selector: "#timer-1",
+  selector: '#timer-1',
   onTick: updateTimerface,
 });
 countdownTimer.start();
@@ -37,13 +37,13 @@ function updateTimerface({ days, hours, mins, secs }) {
 }
 
 function pad(value) {
-  return String(value).padStart(2, "0");
+  return String(value).padStart(2, '0');
 }
 
 function getTimeComponents(time) {
   const days = pad(Math.floor(time / (1000 * 60 * 60 * 24)));
   const hours = pad(
-    Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+    Math.floor((time % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
   );
   const mins = pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
   const secs = pad(Math.floor((time % (1000 * 60)) / 1000));
